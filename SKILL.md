@@ -16,8 +16,7 @@ Goal: produce a weekly digest of relevant spine surgery articles for Guilherme (
    - `adult spinal deformity` (ASD, scoliosis surgery, sagittal alignment)
    - `transforaminal lumbar interbody fusion OR TLIF OR ALIF OR LLIF OR OLIF`
 2. Fetch titles/abstracts (esummary + efetch abstract for shortlisted papers).
-3. Filter for relevance — **pré-triagem com Jev primeiro** (skill `jev-typesafe`, chave já configurada): escreva os registros (título + abstract) em JSON e rode `C:/Users/gui_g/jev/.venv/Scripts/python.exe C:/Users/gui_g/jev/jev_ask.py <arquivo.json>`, um abstract por chamada, com perguntas atômicas: Choice `tipo_estudo` (rct | revisao_sistematica_ou_meta | coorte_comparativa | nota_tecnica | serie_de_casos | outro), Noul `mis_ou_endoscopico`, Noul `reporta_desfecho_clinico`, Score `relevancia` (4 níveis, "sem relevância" → "pode mudar conduta"). Fixe `--model jev-1.13.0`. **Corte generoso** (manter Score >= 2, ou tipo_estudo rct/revisao_sistematica_ou_meta/coorte_comparativa, ou qualquer Noul > 0.5) e logue quantos itens entraram/saíram. Se o Jev falhar (sem chave, erro, 429), **cair para a triagem por LLM como antes** — a execução de domingo nunca pode falhar por causa disso. Só depois da pré-triagem o LLM lê a lista curta.
-   Prioridades do LLM na leitura final: RCTs, meta-análises, technique papers, complications, outcome studies; drop case reports, letters, non-clinical studies unless notable.
+3. Filter for relevance — prioridade na leitura: RCTs, meta-análises, technique papers, complicações, estudos de desfecho; drop case reports, letters, estudos não clínicos (exceto se notáveis). Mire em 5–15 artigos por digest.
 4. Check the job's previous output (continuity) — do not repeat papers already included in a prior week.
 
 ## Output
