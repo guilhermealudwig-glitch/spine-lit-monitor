@@ -1,0 +1,4 @@
+literature-monitor/*.pdf
+literature-monitor/*.html
+pubmed_shortlist.tsv
+__pycache__/
