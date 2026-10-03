@@ -20,7 +20,7 @@ Goal: produce a weekly digest of relevant spine surgery articles for Guilherme (
 4. Check the job's previous output (continuity) — do not repeat papers already included in a prior week.
 
 ## Output
-1. Write a markdown digest in `~/AppData/Local/hermes/profiles/hermes-guilherme/literature-monitor/` named `digest-YYYY-MM-DD.md`: per paper — title, authors (first + et al), journal, PMUID, one-paragraph critical summary in Portuguese, and PubMed link `https://pubmed.ncbi.nlm.nih.gov/<PMUID>/`. Group by topic; open with a 3-5 bullet 'Destaques da semana'.
+1. Write a markdown digest in the workdir's `literature-monitor/` dir named `digest-YYYY-MM-DD.md`: per paper — title, authors (first + et al), journal, PMUID, one-paragraph critical summary in Portuguese, and PubMed link `https://pubmed.ncbi.nlm.nih.gov/<PMUID>/`. Group by topic; open with a 3-5 bullet 'Destaques da semana'.
 2. Convert the digest to PDF in the same folder (same name, .pdf) — e.g. via pandoc, or wkhtmltopdf/weasyprint; if none available, generate a clean HTML file and note it.
 3. Final chat response: the 'Destaques da semana' + top 3-5 papers with PubMed links, and MEDIA: paths to the digest and PDF. Respond in Portuguese.
 
